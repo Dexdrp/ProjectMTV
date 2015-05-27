@@ -1,0 +1,11 @@
+package view;
+
+import javafx.scene.layout.GridPane;
+
+public class QueuePanel extends GridPane{
+	
+	public QueuePanel(){
+		
+	}
+
+}
