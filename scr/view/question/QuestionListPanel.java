@@ -3,9 +3,6 @@ package view.question;
 import java.util.ArrayList;
 
 import model.Question;
-import javafx.geometry.HPos;
-import javafx.geometry.VPos;
-import javafx.scene.Node;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
@@ -21,6 +18,7 @@ public class QuestionListPanel extends StackPane{
 	private QuestionListPanel(){
 		
 		setId("question-list");
+		
 		questionList.setSpacing(3);
 		
 		getChildren().add(questionList);
@@ -41,32 +39,6 @@ public class QuestionListPanel extends StackPane{
 		QuestionComponent component = new QuestionComponent(question);
 		array.add(component);
 	}
-	
-    @Override
-    protected double computePrefWidth(double height) {
-        // here calculate prefWidth
-        // include padding 
-    	System.out.println("computePrefWidth");
-        return super.computePrefWidth(height);
-    }
-
-    @Override
-    protected double computePrefHeight(double width) {
-        // here calculate prefHeight
-        // include padding and other stuff
-    	System.out.println("computePrefHeight");
-        return super.computePrefHeight(width);
-    }
-
-    @Override
-    protected void layoutChildren() {
-    	System.out.println("LayoutChildren");
-        int i = 0;
-        for (Node node : getChildren()) {
-            layoutInArea(node, i, i, getWidth(), getHeight(), 0.0d, HPos.LEFT, VPos.TOP);
-            i += 40;
-        }
-    }
 	
 	public void clear(){
 		array.clear();
