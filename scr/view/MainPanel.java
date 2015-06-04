@@ -53,11 +53,13 @@ public class MainPanel extends GridPane{
 	}
 	
 	public void layoutChildren(){
+		
 		super.layoutChildren();
 		
 		// Fixes the weird positioning.
 		questionListPanel.setLayoutY(210);
 		queueListPanel.setLayoutY(210);
+		
 	}
 	
 	public static MainPanel getInstance(){

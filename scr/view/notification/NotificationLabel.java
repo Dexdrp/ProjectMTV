@@ -39,7 +39,7 @@ public class NotificationLabel extends Group{
 		
 		final double w = rectangle.getWidth();
 		final double h = rectangle.getHeight();
-		System.out.println("HI");
+		
 		clip.setWidth(w);
 		clip.setHeight(h);
 		clip.prefWidth(w);
@@ -47,18 +47,18 @@ public class NotificationLabel extends Group{
 		clip.setLayoutX(0);
 		clip.setLayoutY(-h/2);
 	      
-		text.setWrappingWidth(w * 0.9);
+		text.setWrappingWidth(w * 1);
 		text.setLayoutX(w / 2 - w / 2);
 		text.setLayoutY(h / 2);
 		
 	}
 	
 	public void setWidth(double width){
-		rectangle.setWidth(width);
+		rectangle.setWidth(width - 1);
 	}
 	
 	public void setHeight(double height){
-		rectangle.setHeight(height);
+		rectangle.setHeight(height - 1);
 	}
 	
 	public void setText(String string){

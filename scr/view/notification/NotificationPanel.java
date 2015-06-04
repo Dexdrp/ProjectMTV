@@ -26,6 +26,8 @@ public class NotificationPanel extends BorderPane implements EventHandler{
 		
 		setId("notification-slider");
 		
+		setMinWidth(0);
+		
 		setCenter(label);
 		
 		timeline.setCycleCount(Timeline.INDEFINITE);
@@ -57,23 +59,16 @@ public class NotificationPanel extends BorderPane implements EventHandler{
 
 	@Override
 	protected void layoutChildren() {
-		super.layoutChildren();
 		
-//		label.setWidth(this.getWidth());
-//		label.setHeight(this.getHeight());
-//		label.doLayout();
+		label.setWidth(getWidth());
+		label.setHeight(getHeight());
+		label.doLayout();
+		
+		super.layoutChildren();
 		
 	}
 
-	@Override
-	public void requestLayout() {
-		super.requestLayout();
-		System.out.println("HI");
-		label.setWidth(this.getWidth());
-		label.setHeight(this.getHeight());
-		label.doLayout();
-		
-	}
+	
 
 	public static void insert(String notification){
 		notificationList.add(notification);
