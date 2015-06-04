@@ -1,7 +1,6 @@
 package view;
 
 import controller.RefreshHandler;
-import datalayer.DaoTVView;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;

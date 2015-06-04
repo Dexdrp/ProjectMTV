@@ -6,10 +6,8 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.Event;
 import javafx.event.EventHandler;
-import javafx.geometry.Pos;
-import javafx.scene.control.Label;
+import javafx.geometry.Insets;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.text.Font;
 import javafx.util.Duration;
 
 public class NotificationPanel extends BorderPane implements EventHandler{
@@ -28,6 +26,7 @@ public class NotificationPanel extends BorderPane implements EventHandler{
 		
 		setMinWidth(0);
 		
+		setPadding(new Insets(3));
 		setCenter(label);
 		
 		timeline.setCycleCount(Timeline.INDEFINITE);
