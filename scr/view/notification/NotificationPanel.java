@@ -19,7 +19,7 @@ public class NotificationPanel extends BorderPane implements EventHandler{
 	private static int duration = 1;
 	
 	private Timeline timeline = new Timeline();
-	private Label label = new Label("Mededelingen");
+	private NotificationLabel label = new NotificationLabel("Mededelingen");
     private int count = 0;
 	
 	public NotificationPanel(){
@@ -27,10 +27,6 @@ public class NotificationPanel extends BorderPane implements EventHandler{
 		setId("notification-slider");
 		
 		setCenter(label);
-		
-		label.setAlignment(Pos.CENTER);
-		label.setFont(new Font("Calibri", 42));
-		label.setWrapText(true);
 		
 		timeline.setCycleCount(Timeline.INDEFINITE);
 		timeline.getKeyFrames().add(new KeyFrame(Duration.seconds(duration), this));
@@ -58,7 +54,27 @@ public class NotificationPanel extends BorderPane implements EventHandler{
 		count++;
 		
 	}
-	
+
+	@Override
+	protected void layoutChildren() {
+		super.layoutChildren();
+		
+//		label.setWidth(this.getWidth());
+//		label.setHeight(this.getHeight());
+//		label.doLayout();
+		
+	}
+
+	@Override
+	public void requestLayout() {
+		super.requestLayout();
+		System.out.println("HI");
+		label.setWidth(this.getWidth());
+		label.setHeight(this.getHeight());
+		label.doLayout();
+		
+	}
+
 	public static void insert(String notification){
 		notificationList.add(notification);
 	}

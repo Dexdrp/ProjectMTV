@@ -3,8 +3,10 @@ package view.question;
 import java.util.ArrayList;
 
 import model.Question;
+import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 
 public class QuestionListPanel extends StackPane{
 	
@@ -12,6 +14,7 @@ public class QuestionListPanel extends StackPane{
 	
 	private final static int rowAmount = 8;
 	
+	private Label noQuestionsLabel = new Label("Er zijn op dit moment geen vragen...");
 	private ArrayList<QuestionComponent> array = new ArrayList<QuestionComponent>();
 	private VBox questionList = new VBox();
 	
@@ -20,12 +23,22 @@ public class QuestionListPanel extends StackPane{
 		setId("question-list");
 		
 		questionList.setSpacing(3);
-		
 		getChildren().add(questionList);
+		
+		noQuestionsLabel.setVisible(false);
+		noQuestionsLabel.setFont(new Font("Calibri", 28));
+		getChildren().add(noQuestionsLabel);
 		
 	}
 	
 	public void update(){
+		
+		if(array.size() == 0){
+			noQuestionsLabel.setVisible(true);
+			return;
+		}
+		
+		noQuestionsLabel.setVisible(false);
 		
 		for(int i=0;i<array.size();i++){
 			if(i >= rowAmount){ break; }
