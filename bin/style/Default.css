@@ -29,6 +29,12 @@
 	-fx-border-color: #000000;
 }
 
+#question-info-panel {
+	-fx-font-family: 'calibri';
+	-fx-border-width: 1 1 1 1;
+	-fx-border-color: #000000;
+}
+
 #question-panel {
 	-fx-font-family: 'calibri';
 	-fx-grid-lines-visible: false;

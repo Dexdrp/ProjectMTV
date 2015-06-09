@@ -19,7 +19,7 @@ public class TVFrame extends Application{
 		scene.getStylesheets().add(style);
 		stage.setScene(scene);
 		
-//		stage.setFullScreen(true);
+		stage.setFullScreen(true);
 		
 		stage.show();
 		

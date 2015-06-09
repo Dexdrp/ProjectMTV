@@ -46,7 +46,7 @@ public class QuestionComponent extends GridPane{
 		column.setHgrow(Priority.ALWAYS);
 		getColumnConstraints().add(column);
 		
-		row = new RowConstraints(69);
+		row = new RowConstraints(80);
 		row.setVgrow(Priority.NEVER);
 		getRowConstraints().add(row);
 		

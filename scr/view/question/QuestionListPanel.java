@@ -28,7 +28,7 @@ public class QuestionListPanel extends StackPane{
 		noQuestionsLabel.setVisible(false);
 		noQuestionsLabel.setFont(new Font("Calibri", 28));
 		getChildren().add(noQuestionsLabel);
-		
+			
 	}
 	
 	public void update(){
