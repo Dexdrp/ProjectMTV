@@ -1,5 +1,6 @@
 package view;
 
+import controller.Client;
 import controller.RefreshHandler;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -29,7 +30,9 @@ public class TVFrame extends Application{
 	public void init() throws Exception {
 		super.init();
 		
-		new RefreshHandler();
+		//new RefreshHandler();
+		new Thread(Client.newInstance(datalayer.DaoTVView.getInstance().LoadServerIP(), 1500)).start();
+
 		
 	}
 	
