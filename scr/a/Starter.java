@@ -1,5 +1,6 @@
 package a;
 
+import controller.Client;
 import view.TVFrame;
 
 public class Starter {
