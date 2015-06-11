@@ -37,7 +37,6 @@ public class Client implements Runnable{
 
 	@Override
 	public void run() {
-		System.out.println("run()");
 		try {
 			
 			display("Local IP = " + getClientIP());
@@ -65,19 +64,9 @@ public class Client implements Runnable{
 
 				switch(entity.getType()){
 
-				case Entity.MESSAGE:
-					display("Message received from server: " +  entity.getO().toString());
-					/*TeacherPanel.getInstance().getListModel().addElement(entity.getO().toString());
-					TeacherPanel.getInstance().getList().setBounds(350, 50, 600, 500);
-					TeacherPanel.getInstance().repaint();*/
-	
-				
-					break;
-
 				case Entity.LIST_UPDATE:
 					display("List update received from server");
-					/*TeacherPanel.getInstance().getListModel().remove((int)entity.getO());
-					TeacherPanel.getInstance().repaint();*/
+					// do tv list update here
 					break;
 				}
 			}
@@ -93,25 +82,6 @@ public class Client implements Runnable{
 		String ip;
 		ip = Inet4Address.getLocalHost().getHostAddress();
 		return ip;
-	}
-
-	public void sendMessage(String message){
-		Entity messageEntity = new Entity(Entity.MESSAGE, message);
-		try {        	
-			outputStream.writeObject(messageEntity);
-		} catch (IOException e1) {
-			display("Can't send message to server");
-		}
-	}
-
-
-	public void updateTeacherList(int index) {
-		Entity update = new Entity(Entity.LIST_UPDATE, index);
-		try {
-			outputStream.writeObject(update);
-		} catch (Exception e) {
-			display("Can't send update to server");
-		}
 	}
 
 	public int getID(){

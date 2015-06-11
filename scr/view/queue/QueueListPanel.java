@@ -2,6 +2,7 @@ package view.queue;
 
 import model.Question;
 import view.question.QuestionComponent;
+import javafx.geometry.Insets;
 import javafx.scene.layout.VBox;
 
 public class QueueListPanel extends VBox{
@@ -12,22 +13,9 @@ public class QueueListPanel extends VBox{
 		
 		setId("queue-list");
 		
-	}
-	
-	public void add(QuestionComponent questionComponent){
-		getChildren().add(questionComponent);
-	}
-	
-	public void add(Question question){
-		add(new QuestionComponent(question));
-	}
-	
-	public void remove(QuestionComponent questionPanel){
-		getChildren().remove(questionPanel);
-	}
-	
-	public void removeAll(){
-		getChildren().clear();
+		setMinWidth(0);
+		
+		
 	}
 	
 	public static QueueListPanel getInstance(){
