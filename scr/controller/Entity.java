@@ -6,18 +6,15 @@ public class Entity implements Serializable{
 
 	private static final long serialVersionUID = -7940898331284838487L;
 	
-	public final static int MESSAGE = 0;
-	public final static int LIST_UPDATE = 1;
-	
 	private Object o;
-	private int type;
+	private ENTITY_TYPE type;
 
-	public Entity(int type, String message) {
+	public Entity(ENTITY_TYPE type, String message) {
 		this.type = type;
 		this.o = message;
 	}
 	 
-	public Entity(int type, int updateIndex) {
+	public Entity(ENTITY_TYPE type, int updateIndex) {
 		this.type = type;
 		this.o = updateIndex;
 	}
@@ -26,7 +23,7 @@ public class Entity implements Serializable{
 		return o;
 	}
 
-	public int getType() {
+	public ENTITY_TYPE getType() {
 		return type;
 	}
 }

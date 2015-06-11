@@ -64,7 +64,7 @@ public class Client implements Runnable{
 
 				switch(entity.getType()){
 
-				case Entity.LIST_UPDATE:
+				case LIST_UPDATE:
 					display("List update received from server");
 					// do tv list update here
 					break;
